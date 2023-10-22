@@ -1,0 +1,252 @@
+
+<div class="header-right" style="display: flex; gap: 10px; margin-left: 250;">
+    <button class="phone-button" style="background-color: transparent; border: none; cursor: pointer;">
+        <i class="fas fa-phone" style="font-size: 24px;"></i>
+    </button>
+
+
+    
+    <button class="menu-button" style="background-color: transparent; border: none; cursor: pointer; outline: none;">
+        <i class="fas fa-bars" style="font-size: 24px; transition: transform 0.3s ease;"></i>
+    </button>
+    
+    
+    <script>
+        document.querySelector('.menu-button').addEventListener('click', function() {
+            const icon = this.querySelector('i');
+            if (icon.classList.contains('active')) {
+                icon.style.transform = 'rotate(0deg) scale(1)';
+                icon.classList.remove('active');
+                icon.classList.remove('fa-close');
+                icon.classList.add('fa-bars');
+            } else {
+                icon.style.transform = 'rotate(90deg) scale(1)';
+                icon.classList.add('active');
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-close');
+            }
+        });
+    </script>
+    
+
+
+
+    
+</div>
+</div>
+
+
+
+
+
+<div class="menu-container" style="position: fixed; top: 50px; right: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, #F29CAE 0%, #958DC7 100%); transition: right 0.3s; z-index: 1;">
+<div class="menu" style="padding: 20px;">
+    <ul>
+        <style>
+    
+    ul {
+list-style: none; /* Remove bullets */
+padding: 0; /* Remove default padding */
+margin: 0; /* Remove default margin */
+}
+
+.menu-item.active .dot {
+content: "\2022"; /* Use the bullet character */
+color: white; /* Color of the dot */
+margin-right: 10px; /* Spacing between the dot and text */
+}
+
+.dot {
+display: none; /* Hide the dot by default */
+}
+
+        </style>
+
+        
+
+        <li><a href="#" style="color: #F0EBEF; font-size: 20px; font-family: Arial; font-weight: 700; text-transform: uppercase; line-height: 45.76px; letter-spacing: 0.96px;"><span class="dot" style="display: inline; margin-right: 10px; color: white;"></span> • Главная</a></li>
+
+        <li><a href="#" style="color: #F0EBEF; font-size: 20px; font-family: Arial; font-weight: 700; text-transform: uppercase; line-height: 45.76px; letter-spacing: 0.96px;"> • Аппартаменты</a></li>
+
+        <li><a href="#" style="color: #F0EBEF; font-size: 20px; font-family: Arial; font-weight: 700; text-transform: uppercase; line-height: 45.76px; letter-spacing: 0.96px;"> • О проекте</a></li>
+
+        <li><a href="#" style="color: #F0EBEF; font-size: 20px; font-family: Arial; font-weight: 700; text-transform: uppercase; line-height: 45.76px; letter-spacing: 0.96px;"> • Террасы</a></li>
+
+        <li><a href="#" style="color: #F0EBEF; font-size: 20px; font-family: Arial; font-weight: 700; text-transform: uppercase; line-height: 45.76px; letter-spacing: 0.96px;"> • Новости</a></li>
+
+        <li><a href="#" style="color: #F0EBEF; font-size: 20px; font-family: Arial; font-weight: 700; text-transform: uppercase; line-height: 45.76px; letter-spacing: 0.96px;"> • Документы</a></li>
+
+        <li><a href="#" style="color: #F0EBEF; font-size: 20px; font-family: Arial; font-weight: 700; text-transform: uppercase; line-height: 45.76px; letter-spacing: 0.96px;"> • Контакты</a></li>
+    </ul>
+</div>
+</div>
+
+
+
+<div class="menu-overlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); display: none; z-index: 0;"></div>
+
+<script>
+const menuButton = document.querySelector(".menu-button");
+const menu = document.querySelector(".menu-container");
+const menuOverlay = document.querySelector(".menu-overlay");
+const menuItems = document.querySelectorAll(".menu-item");
+
+let isMenuOpen = false;
+
+menuButton.addEventListener("click", () => {
+    if (isMenuOpen) {
+        menu.style.right = "-100%"; // Close the menu by moving it to the right
+        menuOverlay.classList.remove("active");
+        document.body.style.overflow = "auto";
+    } else {
+        menu.style.right = "0"; // Open the menu by moving it to the left
+        menuOverlay.classList.add("active");
+        document.body.style.overflow = "hidden";
+    }
+    isMenuOpen = !isMenuOpen;
+});
+
+            menuOverlay.addEventListener("click", () => {
+                menu.style.right = "-100%"; // Close the menu by moving it to the right
+                menuOverlay.classList.remove("active");
+                document.body.style.overflow = "auto";
+                isMenuOpen = false;
+            });
+
+            // Add click event listeners to handle the active state
+            menuItems.forEach(item => {
+                item.addEventListener("click", () => {
+                    menuItems.forEach(menuItem => {
+                        menuItem.classList.remove("active");
+                        menuItem.querySelector(".dot").style.display = "none";
+                    });
+
+                    item.classList.add("active");
+                    item.querySelector(".dot").style.display = "inline";
+                });
+            });
+
+        </script>
+
+
+<div class="div">
+    <div class="div-2">О проекте</div>
+    <div class="div-3">В ДОМЕ РАСПОЛОЖЕНО 54 АПАРТАМЕНТА И 4 ПЕНТХАУСА.</div>
+    <div class="div-4">
+      Компактные, но вместительные студии, рациональные односпальные и двуспальные
+      апартаменты с отделкой White Box Max - неизменно являются проекцией вашей
+      индивидуальности и жизненного статуса.
+    </div>
+    <img
+      loading="lazy"
+      srcset="https://cdn.builder.io/api/v1/image/assets/TEMP/cafbffdb-84c1-4964-a757-d2d15261b88b?apiKey=9d74325e4d9e4650bbc297bb982a7fac&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/cafbffdb-84c1-4964-a757-d2d15261b88b?apiKey=9d74325e4d9e4650bbc297bb982a7fac&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/cafbffdb-84c1-4964-a757-d2d15261b88b?apiKey=9d74325e4d9e4650bbc297bb982a7fac&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/cafbffdb-84c1-4964-a757-d2d15261b88b?apiKey=9d74325e4d9e4650bbc297bb982a7fac&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/cafbffdb-84c1-4964-a757-d2d15261b88b?apiKey=9d74325e4d9e4650bbc297bb982a7fac&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/cafbffdb-84c1-4964-a757-d2d15261b88b?apiKey=9d74325e4d9e4650bbc297bb982a7fac&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/cafbffdb-84c1-4964-a757-d2d15261b88b?apiKey=9d74325e4d9e4650bbc297bb982a7fac&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/cafbffdb-84c1-4964-a757-d2d15261b88b?apiKey=9d74325e4d9e4650bbc297bb982a7fac&"
+      class="img"
+    />
+    <div class="div-5">Лаунж-зона на открытой террасе дома</div>
+    <div class="div-6">
+      Для всех жителей дома будет доступна терраса под открытым небом. А два
+      эксклюзивных пентхауса будут иметь приватные террасы с выходом из
+      собственных апартаментов.
+    </div>
+    <img
+      loading="lazy"
+      srcset="https://cdn.builder.io/api/v1/image/assets/TEMP/264fe825-3e72-4e22-83b6-ad883a2218d2?apiKey=9d74325e4d9e4650bbc297bb982a7fac&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/264fe825-3e72-4e22-83b6-ad883a2218d2?apiKey=9d74325e4d9e4650bbc297bb982a7fac&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/264fe825-3e72-4e22-83b6-ad883a2218d2?apiKey=9d74325e4d9e4650bbc297bb982a7fac&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/264fe825-3e72-4e22-83b6-ad883a2218d2?apiKey=9d74325e4d9e4650bbc297bb982a7fac&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/264fe825-3e72-4e22-83b6-ad883a2218d2?apiKey=9d74325e4d9e4650bbc297bb982a7fac&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/264fe825-3e72-4e22-83b6-ad883a2218d2?apiKey=9d74325e4d9e4650bbc297bb982a7fac&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/264fe825-3e72-4e22-83b6-ad883a2218d2?apiKey=9d74325e4d9e4650bbc297bb982a7fac&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/264fe825-3e72-4e22-83b6-ad883a2218d2?apiKey=9d74325e4d9e4650bbc297bb982a7fac&"
+      class="img-2"
+    />
+  </div>
+  <style>
+    .div {
+      background-color: #fff;
+      display: flex;
+      width: 365px;
+      padding-right: 12px;
+      padding-left: 11px;
+      flex-direction: column;
+    }
+    .div-2 {
+      color: #1a1a1a;
+      font-family: Roboto, sans-serif;
+      font-size: 29px;
+      font-weight: 400;
+      line-height: 135.06%;
+      letter-spacing: 0.451px;
+      text-transform: uppercase;
+      align-self: start;
+      margin-top: 83px;
+      width: 186px;
+      max-width: 100%;
+    }
+    .div-3 {
+      color: #1a1a1a;
+      font-family: Roboto, sans-serif;
+      font-size: 13px;
+      font-weight: 400;
+      line-height: 147.84%;
+      align-self: start;
+      margin-top: 29px;
+      margin-left: 3px;
+      width: 332px;
+      max-width: 100%;
+    }
+    .div-4 {
+      color: #1a1a1a;
+      font-family: Roboto, sans-serif;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 160.16%;
+      align-self: start;
+      margin-top: 23px;
+      margin-left: 4px;
+      width: 296px;
+      max-width: 100%;
+    }
+    .img {
+      aspect-ratio: 1.59;
+      object-fit: cover;
+      object-position: center;
+      width: 100%;
+      overflow: hidden;
+      align-self: stretch;
+      margin-top: 30px;
+      margin-left: 4px;
+      margin-right: 5px;
+    }
+    .div-5 {
+      color: #1a1a1a;
+      font-family: Roboto, sans-serif;
+      font-size: 19px;
+      font-weight: 400;
+      line-height: 145.52%;
+      letter-spacing: 0.336px;
+      text-transform: uppercase;
+      align-self: start;
+      margin-top: 13px;
+      margin-left: 7px;
+      width: 311px;
+      max-width: 100%;
+    }
+    .div-6 {
+      color: #1a1a1a;
+      font-family: Roboto, sans-serif;
+      font-size: 13px;
+      font-weight: 400;
+      line-height: 147.84%;
+      align-self: center;
+      margin-top: 22px;
+      margin-left: -5px;
+      width: 313px;
+      max-width: 100%;
+    }
+    .img-2 {
+      aspect-ratio: 1.62;
+      object-fit: cover;
+      object-position: center;
+      width: 335px;
+      overflow: hidden;
+      align-self: start;
+      margin-top: 21px;
+      margin-left: 7px;
+      max-width: 100%;
+      flex-grow: 1;
+    }
+  </style>

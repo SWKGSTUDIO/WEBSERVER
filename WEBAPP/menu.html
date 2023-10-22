@@ -1,0 +1,78 @@
+<div class="menu-container" style="position: fixed; top: 50px; right: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, #F29CAE 0%, #958DC7 100%); transition: right 0.3s; z-index: 1;">
+    <div class="menu" style="padding: 20px;">
+        <ul>
+            <style>
+        
+        ul {
+    list-style: none; /* Remove bullets */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+}
+
+.menu-item.active .dot {
+    content: "\2022"; /* Use the bullet character */
+    color: white; /* Color of the dot */
+    margin-right: 10px; /* Spacing between the dot and text */
+}
+
+.dot {
+    display: none; /* Hide the dot by default */
+}
+
+            </style>
+
+            
+            <li><a href="#" style="color: #F0EBEF; font-size: 20px; font-family: Arial; font-weight: 700; text-transform: uppercase; line-height: 45.76px; letter-spacing: 0.96px;">О проекте</a></li>
+            <li><a href="#" style="color: #F0EBEF; font-size: 20px; font-family: Arial; font-weight: 700; text-transform: uppercase; line-height: 45.76px; letter-spacing: 0.96px;">Выбрать квартиру</a></li>
+            <li><a href="#" style="color: #F0EBEF; font-size: 20px; font-family: Arial; font-weight: 700; text-transform: uppercase; line-height: 45.76px; letter-spacing: 0.96px;">Расположение</a></li>
+            <li><a href="#" style="color: #F0EBEF; font-size: 20px; font-family: Arial; font-weight: 700; text-transform: uppercase; line-height: 45.76px; letter-spacing: 0.96px;">команда</a></li>
+            <li><a href="#" style="color: #F0EBEF; font-size: 20px; font-family: Arial; font-weight: 700; text-transform: uppercase; line-height: 45.76px; letter-spacing: 0.96px;">контакты</a></li>
+          
+        </ul>
+    </div>
+</div>
+
+
+
+<div class="menu-overlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); display: none; z-index: 0;"></div>
+
+<script>
+    const menuButton = document.querySelector(".menu-button");
+    const menu = document.querySelector(".menu-container");
+    const menuOverlay = document.querySelector(".menu-overlay");
+    const menuItems = document.querySelectorAll(".menu-item");
+
+    let isMenuOpen = false;
+
+    menuButton.addEventListener("click", () => {
+        if (isMenuOpen) {
+            menu.style.right = "-100%"; // Close the menu by moving it to the right
+            menuOverlay.classList.remove("active");
+            document.body.style.overflow = "auto";
+        } else {
+            menu.style.right = "0"; // Open the menu by moving it to the left
+            menuOverlay.classList.add("active");
+            document.body.style.overflow = "hidden";
+        }
+        isMenuOpen = !isMenuOpen;
+    });
+
+    menuOverlay.addEventListener("click", () => {
+        menu.style.right = "-100%"; // Close the menu by moving it to the right
+        menuOverlay.classList.remove("active");
+        document.body.style.overflow = "auto";
+        isMenuOpen = false;
+    });
+
+    // Add click event listeners to handle the active state
+    menuItems.forEach(item => {
+        item.addEventListener("click", () => {
+            menuItems.forEach(item => {
+                item.classList.remove("active");
+                item.querySelector(".dot").style.display = "none";
+            });
+            item.classList.add("active");
+            item.querySelector(".dot").style.display = "inline"; // Show the dot
+        });
+    });
+</script>
