@@ -8,14 +8,14 @@ const fs = require("fs");
 
 const seo = require("./src/seo.json");
 
-const sslCertPath = "/app/";
+const sslCertPath = "./app/";
 
 const tlsOptions = {
   key: fs.readFileSync(path.join(sslCertPath, "privkey.pem")),
   cert: fs.readFileSync(path.join(sslCertPath, "fullchain.pem")),
 };
 
-const serverUrl = 'https://gamy-season-repair.glitch.me';
+const serverUrl = 'http://95.165.99.141:3000/';
 
 const bot = require("./tgbot1");
 
