@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Фильтр</title>
+    <!-- Add a link to the stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Include the noUiSlider library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.0.3/nouislider.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.0.3/nouislider.min.js"></script>
+</head>
+<body>
+    <div style="width: 100%; height: 100%; position: relative; background: white">
+    <img class="Image19" style="width: 317px; height: 84px; left: 31px; top: 590px; position: absolute" src="https://via.placeholder.com/317x84" />
+    <img class="Image" style="width: 304px; height: 218px; left: 44px; top: 333px; position: absolute" src="https://via.placeholder.com/304x218" />
+      
+      
+    <div class="BlockHeaderNav" style="width: 390px; height: 210px; left: 0px; top: 33px; position: absolute">
+      
+      
+       <div class="ButtonParam" style="width: 283px; height: 116px; left: 54px; top: 94px; position: absolute">
+    <div class="PrivPlanButton" style="width: 283px; height: 46px; left: 0px; top: 70px; position: absolute">
+        <div class="Color2" style="width: 283px; height: 43px; left: 0px; top: 1px; position: absolute; background: #FFF0BD; border-radius: 5px"></div>
+        <div style="width: 266.29px; left: 9.40px; top: 0px; position: absolute; text-align: center; color: black; font-size: 17px; font-family: Arial; font-weight: 700; text-transform: uppercase; line-height: 45.76px; letter-spacing: 1.96px; word-wrap: break-word">
+            <a href="page2" class="button-link">Примеры планировок</a>
+        </div>
+    </div>
+    <div class="SelParamButton" style="width: 283px; height: 46px; left: 0px; top: 0px; position: absolute">
+        <div class="Color1" style="width: 283px; height: 43px; left: 0px; top: 1px; position: absolute; background: #D9D9D9; border-radius: 5px"></div>
+        <div style="width: 266.29px; left: 9.40px; top: 0px; position: absolute; text-align: center; color: #0F0F0F; font-size: 17px; font-family: Arial; font-weight: 700; text-transform: uppercase; line-height: 45.76px; letter-spacing: 1.96px; word-wrap: break-word">
+            <a href="page3" class="button-link">Выбор по параметрам</a>
+        </div>
+    </div>
+</div>
+
+      
+      
+      
+        <div style="width: 390px; height: 68px; left: 0px; top: 0px; position: absolute; text-align: center; color: black; font-size: 17px; font-family: Arial; font-weight: 700; text-transform: uppercase; line-height: 45.76px; letter-spacing: 1.96px; word-wrap: break-word">Выбор квартиры</div>
+    </div>
+</div>
+
+  
+  <script>
+    // Обработчик клика по кнопкам
+    document.querySelectorAll('.button-link').forEach(function (button) {
+        button.addEventListener('click', function (event) {
+            event.preventDefault();
+
+            // Получите ссылку на родительское окно (основную страницу)
+            const parentWindow = window.parent;
+
+            // Измените URL главного iframe в родительском окне в соответствии с атрибутом href кнопки
+            parentWindow.document.querySelector('iframe[name="iframe"]').src = this.getAttribute('href');
+        });
+    });
+</script>
+
+
+</body>
+</html>

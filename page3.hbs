@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Фильтр</title>
+    <!-- Add a link to the stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Include the noUiSlider library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.0.3/nouislider.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.0.3/nouislider.min.js"></script>
+</head>
+<body>
+    <div style="width: 100%; height: 100%; position: relative; background: white">
+        <img class="Image18" style="width: 374px; height: 458px; left: 8px; top: 500px; position: absolute" src="https://via.placeholder.com/374x458" />
+
+
+        <div class="BlockSelectParams" style="width: 302px; height: 172px; left: 35px; top: 284px; position: absolute">
+
+
+
+            <div class="SelectRoomButtons" style="width: 238px; height: 41px; left: 0px; top: 90px; position: absolute">
+                <label class="Room3Button" style="width: 31.14px; height: 18px; padding-top: 1px; padding-bottom: 1px; left: 206.86px; top: 12px; position: absolute; background: white; border-radius: 9px; border: 1px black solid; justify-content: center; align-items: center; display: inline-flex">
+                    <input type="checkbox" style="display: none;">
+                    <input type="checkbox" name="room" value="3">
+                    <div style="width: 34.20px; height: 16px; text-align: center; color: black; font-size: 10px; font-family: Inter; font-weight: 300; line-height: 18px; word-wrap: break-word">3</div>
+                </label>
+                <label class="Room2Button" style="width: 31.14px; height: 18px; padding-top: 1px; padding-bottom: 1px; left: 167.93px; top: 12px; position: absolute; background: white; border-radius: 9px; border: 1px black solid; justify-content: center; align-items: center; display: inline-flex">
+                    <input type="checkbox" style="display: none;">
+                    <input type="checkbox" name="room" value="2">
+                    <div style="width: 34.20px; height: 16px; text-align: center; color: black; font-size: 10px; font-family: Inter; font-weight: 300; line-height: 18px; word-wrap: break-word">2</div>
+                </label>
+                <label class="Room1Button" style="width: 31.14px; height: 18px; padding-top: 1px; padding-bottom: 1px; left: 129px; top: 12px; position: absolute; background: white; border-radius: 9px; border: 1px black solid; justify-content: center; align-items: center; display: inline-flex">
+                    <input type="checkbox" style="display: none;">
+                    <input type="checkbox" name="room" value="1">
+                    <div style="width: 34.20px; height: 16px; text-align: center; color: black; font-size: 10px; font-family: Inter; font-weight: 300; line-height: 18px; word-wrap: break-word">1</div>
+                </label>
+                <div style="width: 128px; height: 41px; left: 0px; top: 0px; position: absolute; color: black; font-size: 17px; font-family: Arial; font-weight: 700; text-transform: uppercase; line-height: 45.76px; letter-spacing: 1.96px; word-wrap: break-word">комнат</div>
+            </div>
+            
+            
+            <div class="SelectEtButtons" style="width: 238px; height: 41px; left: 0px; top: 131px; position: absolute">
+                <label class="Et3Button" style="width: 31.14px; height: 18px; padding-top: 1px; padding-bottom: 1px; left: 206.86px; top: 12px; position: absolute; background: white; border-radius: 9px; border: 1px black solid; justify-content: center; align-items: center; display: inline-flex">
+                    <input type="checkbox" style="display: none;">
+                    <input type="checkbox" name="etage" value="3">
+                    <div style="width: 34.20px; height: 16px; text-align: center; color: black; font-size: 10px; font-family: Inter; font-weight: 300; line-height: 18px; word-wrap: break-word">3</div>
+                </label>
+                <label class="Et2Button" style="width: 31.14px; height: 18px; padding-top: 1px; padding-bottom: 1px; left: 167.93px; top: 12px; position: absolute; background: white; border-radius: 9px; border: 1px black solid; justify-content: center; align-items: center; display: inline-flex">
+                    <input type="checkbox" style="display: none;">
+                    <input type="checkbox" name="etage" value="2">
+                    <div style="width: 34.20px; height: 16px; text-align: center; color: black; font-size: 10px; font-family: Inter; font-weight: 300; line-height: 18px; word-wrap: break-word">2</div>
+                </label>
+                <label class="Et1Button" style="width: 31.14px; height: 18px; padding-top: 1px; padding-bottom: 1px; left: 129px; top: 12px; position: absolute; background: white; border-radius: 9px; border: 1px black solid; justify-content: center; align-items: center; display: inline-flex">
+                    <input type="checkbox" style="display: none;">
+                    <input type="checkbox" name="etage" value="1">
+                    <div style="width: 34.20px; height: 16px; text-align: center; color: black; font-size: 10px; font-family: Inter; font-weight: 300; line-height: 18px; word-wrap: break-word">1</div>
+                </label>
+                <div style="width: 128px; height: 41px; left: 0px; top: 0px; position: absolute; color: black; font-size: 17px; font-family: Arial; font-weight: 700; text-transform: uppercase; line-height: 45.76px; letter-spacing: 1.96px; word-wrap: break-word">этаж</div>
+            </div>
+            
+
+           
+            
+
+
+            <div class="Slider2" style="width: 302px; height: 46px; left: 0px; top: 45px; position: absolute">
+                <div style="width: 110.68px; height: 46px; left: 0px; top: 0px; position: absolute; color: black; font-size: 17px; font-family: Arial; font-weight: 700; text-transform: uppercase; line-height: 45.76px; letter-spacing: 1.96px; word-wrap: break-word">ЦЕНА</div>
+                <div class="SliderPl" style="width: 173px; height: 18px; left: 129px; top: 15px; position: absolute">
+                    <div class="DivNouiConnects" style="width: 143.52px; height: 1px; left: 12.41px; top: 9px; position: absolute; border-radius: 3px; overflow: hidden">
+                        <div class="DivNouiConnect" style="width: 143.52px; height: 1px; left: 0px; top: 0px; position: absolute; background: #FF5A3A"></div>
+                    </div>
+                    <div class="Slider1Handle2" style="width: 27.93px; height: 18px; padding-top: 1px; padding-bottom: 1px; left: 145.07px; top: 0px; position: absolute; background: white; border-radius: 9px; border: 1px black solid; justify-content: center; align-items: center; display: inline-flex">
+                        <div style="width: 34.20px; height: 16px; text-align: center; color: black; font-size: 10px; font-family: Inter; font-weight: 300; line-height: 18px; word-wrap: break-word">455</div>
+                    </div>
+                    <div class="Slider1Handle1" style="width: 27.93px; height: 18px; padding-top: 1px; padding-bottom: 1px; left: 0px; top: 0px; position: absolute; background: white; border-radius: 9px; border: 1px black solid; justify-content: center; align-items: center; display: inline-flex">
+                        <div style="width: 34.20px; height: 16px; text-align: center; color: black; font-size: 10px; font-family: Inter; font-weight: 300; line-height: 18px; word-wrap: break-word">44</div>
+                    </div>
+                </div>
+            </div>
+            <div class="Slider1" style="width: 302px; height: 46px; left: 0px; top: 0px; position: absolute">
+                <div style="width: 110.68px; height: 46px; left: 0px; top: 0px; position: absolute; color: black; font-size: 17px; font-family: Arial; font-weight: 700; text-transform: uppercase; line-height: 45.76px; letter-spacing: 1.96px; word-wrap: break-word">Площадь</div>
+                <div class="SliderPl" style="width: 173px; height: 18px; left: 129px; top: 15px; position: absolute">
+                    <div class="DivNouiConnects" style="width: 143.52px; height: 1px; left: 12.41px; top: 9px; position: absolute; border-radius: 3px; overflow: hidden">
+                        <div class="DivNouiConnect" style="width: 143.52px; height: 1px; left: 0px; top: 0px; position: absolute; background: #FF5A3A"></div>
+                    </div>
+                    <div class="Slider1Handle2" style="width: 27.93px; height: 18px; padding-top: 1px; padding-bottom: 1px; left: 145.07px; top: 0px; position: absolute; background: white; border-radius: 9px; border: 1px black solid; justify-content: center; align-items: center; display: inline-flex">
+                        <div style="width: 34.20px; height: 16px; text-align: center; color: black; font-size: 10px; font-family: Inter; font-weight: 300; line-height: 18px; word-wrap: break-word">455</div>
+                    </div>
+                    <div class="Slider1Handle1" style="width: 27.93px; height: 18px; padding-top: 1px; padding-bottom: 1px; left: 0px; top: 0px; position: absolute; background: white; border-radius: 9px; border: 1px black solid; justify-content: center; align-items: center; display: inline-flex">
+                        <div style="width: 34.20px; height: 16px; text-align: center; color: black; font-size: 10px; font-family: Inter; font-weight: 300; line-height: 18px; word-wrap: break-word">44</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        
+        <div class="BlockHeaderNav" style="width: 390px; height: 210px; left: 0px; top: 33px; position: absolute">
+    <div class="ButtonParam" style="width: 283px; height: 116px; left: 54px; top: 94px; position: absolute">
+        <div class="PrivPlanButton" style="width: 283px; height: 46px; left: 0px; top: 70px; position: absolute">
+            <div class="Color2" style="width: 283px; height: 43px; left: 0px; top: 1px; position: absolute; background: #D9D9D9; border-radius: 5px"></div>
+            <div style="width: 266.29px; left: 9.40px; top: 0px; position: absolute; text-align: center; color: black; font-size: 17px; font-family: Arial; font-weight: 700; text-transform: uppercase; line-height: 45.76px; letter-spacing: 1.96px; word-wrap: break-word">
+                <a href="page2" class="button-link">Примеры планировок</a>
+            </div>
+        </div>
+        <div class="SelParamButton" style="width: 283px; height: 46px; left: 0px; top: 0px; position: absolute">
+            <div class="Color1" style="width: 283px; height: 43px; left: 0px; top: 1px; position: absolute; background: #FFF1BD; border-radius: 5px"></div>
+            <div style="width: 266.29px; left: 9.40px; top: 0px; position: absolute; text-align: center; color: #0F0F0F; font-size: 17px; font-family: Arial; font-weight: 700; text-transform: uppercase; line-height: 45.76px; letter-spacing: 1.96px; word-wrap: break-word">
+                <a href="page3" class="button-link">Выбор по параметрам</a>
+            </div>
+        </div>
+    </div>
+    <div style="width: 390px; height: 68px; left: 0px; top: 0px; position: absolute; text-align: center; color: black; font-size: 17px; font-family: Arial; font-weight: 700; text-transform: uppercase; line-height: 45.76px; letter-spacing: 1.96px; word-wrap: break-word">Выбор квартиры</div>
+</div>
+
+
+
+
+<script>
+    // Обработчик клика по кнопкам
+    document.querySelectorAll('.button-link').forEach(function (button) {
+        button.addEventListener('click', function (event) {
+            event.preventDefault();
+
+            // Получите ссылку на родительское окно (основную страницу)
+            const parentWindow = window.parent;
+
+            // Измените URL главного iframe в родительском окне в соответствии с атрибутом href кнопки
+            parentWindow.document.querySelector('iframe[name="iframe"]').src = this.getAttribute('href');
+        });
+    });
+</script>
+
+
+
+
+
+
+      
+        
+        
+        <script>
+            // Получаем все кнопки
+            const buttons = document.querySelectorAll('.SelectEtButtons > .Et1Button, .SelectEtButtons > .Et2Button, .SelectEtButtons > .Et3Button');
+            
+            // Добавляем обработчик события на каждую кнопку
+            buttons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Переключаем класс 'active' в зависимости от текущего состояния
+                    if (button.classList.contains('active')) {
+                        button.classList.remove('active');
+                    } else {
+                        button.classList.add('active');
+                    }
+                });
+            });
+        </script>
+        
+        
+        
+
+
+<!--         <div class="ButtonParam" style="width: 283px; height: 116px; left: 54px; top: 127px; position: absolute">
+            <div class="PrivPlanButton" style="width: 283px; height: 46px; left: 0px; top: 70px; position: absolute">
+                <div class="Color2" style="width: 283px; height: 43px; left: 0px; top: 1px; position: absolute; background: #D9D9D9; border-radius: 5px"></div>
+                <div style="width: 266.29px; left: 9.40px; top: 0px; position: absolute; text-align: center; color: black; font-size: 17px; font-family: Arial; font-weight: 700; text-transform: uppercase; line-height: 45.76px; letter-spacing: 1.96px; word-wrap: break-word">Примеры планировок</div>
+            </div>
+            <div class="SelParamButton" style="width: 283px; height: 46px; left: 0px; top: 0px; position: absolute">
+                <div class="Color1" style="width: 283px; height: 43px; left: 0px; top: 1px; position: absolute; background: #FFF1BD; border-radius: 5px"></div>
+                <div style="width: 266.29px; left: 9.40px; top: 0px; position: absolute; text-align: center; color: #0F0F0F; font-size: 17px; font-family: Arial; font-weight: 700; text-transform: uppercase; line-height: 45.76px; letter-spacing: 1.96px; word-wrap: break-word">Выбор по параметрам</div>
+            </div>
+        </div>
+        <div style="width: 390px; height: 68px; left: 0px; top: 33px; position: absolute; text-align: center; color: black; font-size: 17px; font-family: Arial; font-weight: 700; text-transform: uppercase; line-height: 45.76px; letter-spacing: 1.96px; word-wrap: break-word">Выбор квартиры</div>
+    </div> -->
+
+    <!-- Initialize and configure the sliders -->
+    <script>
+        // Initialize the price slider
+        var priceSlider = document.querySelector('.Slider2 .SliderPl');
+        noUiSlider.create(priceSlider, {
+            start: [44, 455], // Initial range values
+            connect: true, // Display a colored bar between the handles
+            range: {
+                'min': 0,
+                'max': 1000 // Set the maximum range value
+            }
+        });
+
+        // Initialize the area slider
+        var areaSlider = document.querySelector('.Slider1 .SliderPl');
+        noUiSlider.create(areaSlider, {
+            start: [44, 455], // Initial range values
+            connect: true, // Display a colored bar between the handles
+            range: {
+                'min': 0,
+                'max': 1000 // Set the maximum range value
+            }
+        });
+    </script>
+
+
+<script>
+    // Get references to the toggle buttons
+    var et1Button = document.querySelector('.Et1Button');
+    var et2Button = document.querySelector('.Et2Button');
+    var et3Button = document.querySelector('.Et3Button');
+
+    // Function to toggle the button state
+    function toggleButton(button) {
+        // Remove the "active" class from all buttons
+        et1Button.classList.remove('active');
+        et2Button.classList.remove('active');
+        et3Button.classList.remove('active');
+
+        // Add the "active" class to the clicked button
+        button.classList.add('active');
+
+        // You can perform actions here based on the selected button (e.g., filter by floor)
+        // Add your custom code here
+    }
+
+    // Add click event listeners to the buttons
+    et1Button.addEventListener('click', function () {
+        toggleButton(et1Button);
+    });
+
+    et2Button.addEventListener('click', function () {
+        toggleButton(et2Button);
+    });
+
+    et3Button.addEventListener('click', function () {
+        toggleButton(et3Button);
+    });
+</script>
+
+
+</body>
+</html>

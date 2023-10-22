@@ -1,0 +1,507 @@
+
+html, body {
+    height: 100%;
+    margin: 0;
+
+}
+
+.exit-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    background-color: rgb(186, 186, 186);
+    border: none;
+    color: white;
+    font-size: 15px;
+    text-align: center;
+    line-height: 40px;
+  }
+  
+
+
+  .back-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    background-color: rgb(186, 186, 186);
+    border: none;
+    color: white;
+    font-size: 10px;
+    text-align: center;
+    line-height: 20px;
+    display: none;
+}
+
+
+
+  
+  .center-content {
+    text-align: center;
+    margin-top: 10px;
+  } 
+
+  #step-info {
+
+    padding: 10px;
+    text-align: center;
+    display: block; /* Делаем элемент блочным, чтобы установить ширину и маргины */
+    margin: 0 auto; /* Устанавливаем автоматичесные маргины слева и справа, чтобы элемент центрировался */
+    width: 200px; /* Устанавливаем ширину элемента, при необходимости, подберите подходящее значение */
+    font-size: 15px;
+  }
+  
+
+  h1 {
+    font-size: 20px; /* Размер шрифта */
+    text-align: center; /* Выравнивание по центру */
+    color: #333; /* Цвет текста (можете указать свой) */
+    margin: 20px 0; /* Внешний отступ сверху и снизу */
+  }
+  
+
+.btn {
+    
+    background-color: white;
+    color: #333;
+    border: 1px solid #ededed;
+    border-radius: 10px;
+    font-size: 16px;
+    padding: 5px 20px;
+  }
+
+  .btn:hover {
+    background-color: white;
+    color: #333;
+    border: 1px solid #ededed;
+
+}
+  
+
+.btn:active {
+    background-color: #ececec;
+    color: #333;
+    border: 1px solid #ededed;
+}
+
+
+.buttonNext {
+    width: 90%;
+    position: fixed;
+    bottom: 20px; /* Немного поднять кнопку */
+    /* left: 50%;
+    transform: translateX(-50%); */
+    background: linear-gradient(to right, #7B21BF, #1D95FD);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    padding: 10px 20px;
+}
+
+.buttonNext:hover {
+    background: linear-gradient(to left, #7B21BF, #1D95FD);
+    color: white;
+}
+
+
+
+  
+  
+
+  .btn-icon {
+    display: block;
+    margin: 0 auto 5px; 
+    width: 30px;
+    height: 30px;
+  }
+  
+
+  .screen {
+    display: none;
+    text-align: center;
+    transition: opacity 0.5s;
+    opacity: 0;
+
+
+  }
+
+  .screen.active {
+      opacity: 1;
+    display: block;
+  }
+
+
+
+  .btnbig {
+    width: 100%;
+    background-color: white;
+    color: #333;
+    border: 1px solid #ededed;
+    border-radius: 10px;
+    font-size: 16px;
+    padding: 20px 20px;
+}
+
+
+.button1, .button2, .button3 {
+    height: 100px;
+
+  }
+
+  /* .d-flex {
+    justify-content: center;
+    align-items: center;
+  } */
+
+   .title {
+    font-size: large;
+    opacity: 100%;
+    text-align: left;
+  }
+
+  .description {
+    display: none;
+    opacity: 50%;
+    text-align: left;
+  }
+
+ 
+  
+  /* Стили для круглой иконки */
+.circle-icon {
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(to bottom, #7B21BF, #1D95FD);
+    border-radius: 15px; /* Половина высоты для создания круглых углов */
+    transition: height 0.3s ease-in-out;
+  }
+  
+  /* Анимация для растягивания в прямоугольник */
+  .circle-icon.expanded {
+    height: 60px; /* Выберите желаемую высоту */
+  }
+  
+  
+  
+  /* При нажатии кнопки разворачиваем иконку вниз и поворачиваем кнопку на 180 градусов */
+  .buttonV1.clicked .circle-icon {
+    height: 60px;
+  }
+  
+  .buttonV1.clicked {
+    transform: rotate(180deg);
+  }
+  
+
+  #slider {
+    width: 90%;
+    height: 2px;
+}
+
+
+
+#noUi-tooltip {
+    display: none; /* Скрыть черточки */
+  }
+
+  #noUi-handle {
+    border: none;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: white;
+
+    background-image: none;
+    background-repeat: none;
+    background-position: 0 0;
+  }
+  
+
+.input-field {
+    width: 150px;
+    height: 100px;
+    padding: 5px;
+    margin: 10px;
+    border-radius: 10px;
+    border: none;
+}
+
+
+.input-slider-container {
+    margin-top: 20px; /* Регулируйте значение, чтобы установить нужный вам промежуток */
+    text-align: center; /* Выравнивание элементов по центру */
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border: 1px solid #ced4da;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 10px;
+}
+
+.label {
+    margin-bottom: 5px;
+    align-self: flex-start;
+}
+
+.currency {
+    font-weight: bold;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    background-image: linear-gradient(to right, #7B21BF, #1D95FD);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+
+
+.input-group input[type="number"] {
+    border: none;
+    border-radius: 10px;
+    padding: 5px;
+    width: 100%;
+    font-weight: bold;
+}
+
+
+.input-group span {
+    display: inline-block;
+    margin-right: 10px; /* Расстояние между span и input элементами */
+}
+
+.input-group span:nth-child(1) {
+    color: #dfdfdf;
+    font-weight: bold;
+}
+
+.button-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    background-image: linear-gradient(to left, #744372, #E5A4BE, #744372);
+    -webkit-background-clip: text;
+    color: transparent;
+    font-weight: bold;
+
+
+}
+
+.button-label:hover {
+    background-image: linear-gradient(to right, #b068ae, #ffa7ca, #b27db0);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+
+
+
+
+.button-label-item {
+    font-size: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-image: linear-gradient(to left, #222222, #a7a7a7, #222222);
+    -webkit-background-clip: text;
+    color: transparent;
+    font-weight: bold;
+
+}
+
+.button-label-item:hover {
+    background-image: linear-gradient(to right, #b068ae, #ffa7ca, #b27db0);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.svg-icon {
+    width: auto;
+    height: 70px;
+    fill: #007bff;
+}
+
+.item-icon {
+    width: auto;
+    height: 40px;
+}
+
+
+
+
+/* Стили для фиксированной кнопки */
+.fixed-button {
+    position: fixed;
+    top: 20px; /* Располагаем кнопку вверху */
+    right: 20px; /* Располагаем кнопку вправо */
+    background-image: linear-gradient(to right, #7B21BF, #1D95FD);
+    border: none;
+    border-radius: 50%; /* Делаем кнопку круглой */
+    width: 35px; /* Ширина кнопки */
+    height: 35px; /* Высота кнопки */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff; /* Цвет иконки */
+    font-size: 14px; /* Размер иконки */
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Тень кнопки */
+    transition: background-color 0.3s; /* Плавное изменение цвета фона при наведении */
+
+    animation: pulse 1.5s infinite; /* Анимация пульсации */
+}
+
+.fixed-button a {
+    color: #ffffff; /* Цвет иконки */
+    text-decoration: none;
+}
+
+.fixed-button:hover {
+    background-color: #0056b3; /* Изменяем цвет фона при наведении курсора */
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1); /* Увеличиваем размер на 10% */
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+
+
+.noUi-horizontal .noUi-handle:hover {
+    border-color: #ff5a3a;
+}
+
+.noUi-horizontal .noUi-handle.noUi-handle-upper {
+    right: auto;
+    left: 26px;
+}
+
+.noUi-handle:after {
+    display: none;
+}
+
+.noUi-connect {
+    background: #ff5a3a;
+}
+
+#fl-1,
+#fl-2 {
+    width: 100%;
+}
+
+.noUi-horizontal {
+    height: 1px;
+}
+
+
+
+
+.filter__right .filter__right-row:first-child {
+    display: flex !important; }
+
+.filter__list .row {
+    margin-left: -10px;
+    margin-right: -10px;
+    margin-bottom: -10px; }
+
+
+.rooms__ch-btn,
+.filter__right-label,
+.filter__right-input button,
+.result__item-table th {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+
+
+
+
+@media screen and (min-width: 1200px) {
+    .rooms__ch-btn:hover {
+        border-color: #ff5a3a;
+        color: #ff5a3a;
+    }
+}
+
+.rooms__checkbox label {
+    font-weight: normal;
+    width: 100%;
+    margin: 0;
+    position: relative;
+}
+
+.rooms__checkbox label input {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.rooms__checkbox label input:checked~.rooms__ch-btn {
+    border-color: #ff5a3a;
+    color: #ff5a3a;
+}
+
+.initial__checkbox label {
+    font-weight: normal;
+    margin: 0;
+    position: relative;
+}
+
+.initial__checkbox label input {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.initial__checkbox label input:checked~.checkbox__decor:before {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+
+
+/* Стили для чекбоксов */
+.rooms__checkbox {
+    width: 20%; /* Ширина для 5 столбцов */
+    float: left; /* Размещение влево */
+    box-sizing: border-box; /* Учитываем padding и border в ширине */
+}
+
+/* Отступы между чекбоксами */
+.rooms__checkbox + .rooms__checkbox {
+    margin-left: 2%; /* Задайте нужный отступ между чекбоксами */
+}
+
+
+
+
+
+    .Et3Button.active, .Et2Button.active, .Et1Button.active {
+        transform: translateY(-1px);
+    }
+
+

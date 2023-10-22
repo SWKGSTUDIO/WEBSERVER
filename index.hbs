@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEBAPP</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/css/bootstrap-slider.min.css">
+
+    <!-- Подключаем библиотеку noUiSlider -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nouislider@14.6.3/distribute/nouislider.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/nouislider@14.6.3/distribute/nouislider.js"></script>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+
+
+</head>
+
+<body>
+    <!-- <button class="exit-button" onclick="closeWebApp()"></button> -->
+
+    <button class="back-button" onclick="goBack()">
+        <i class="fas fa-chevron-left"></i> <!-- Простая угловатая стрелка влево -->
+    </button>
+
+    <h2 id="step-info">Шаг 1 из 3</h2>
+
+    <div class="container text-center">
+        <img src="https://cdn.glitch.global/c9299adf-7271-442f-8fb5-2c2f945ae32a/homevector1.svg?v=1697364042307"
+            alt="Home Icon" class="svg-icon">
+    </div>
+
+
+    <div class="container center-content">
+
+
+
+
+        <div id="screen1" class="screen active">
+            <h1>Выберите цель покупки</h1>
+
+            <div class="row mt-4">
+                <div class="col-md-12 text-center ">
+                    <div class="btn-group btn-block">
+                        <button class="btn button1" id="var1_1" onclick="changeStep(2)">
+                            <img src="https://cdn.glitch.global/c9299adf-7271-442f-8fb5-2c2f945ae32a/invest.svg?v=1697366218042"
+                                alt="Home Icon" class="item-icon">
+                            <span class="button-label-item">Инвестиции</span>
+                        </button>
+                        <button class="btn button2" id="var2_1" onclick="changeStep(2)">
+                            <img src="https://cdn.glitch.global/c9299adf-7271-442f-8fb5-2c2f945ae32a/self.svg?v=1697366093081"
+                                alt="Home Icon" class="item-icon">
+                            <span class="button-label-item">Для себя</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="row mt-4 ">
+                <div class="col-md-12 text-center ">
+                    <button class="btn btn-block button3 " id="randomButton" onclick="changeStep(2)">
+                        <img src="https://cdn.glitch.global/c9299adf-7271-442f-8fb5-2c2f945ae32a/quest.svg?v=1697366089503"
+                            alt="Home Icon" class="item-icon">
+                        <span class="button-label">Незнаю</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+        <!-- Экран 2 -->
+        <div id="screen2" class="screen">
+
+            <h1>Выберете тип жилья</h1>
+
+
+
+            <div class="row mt-4">
+                <div class="col-md-4 d-flex justify-content-center">
+                    <button class="btnbig buttonV1 mx-2" data-button-id="1">
+                        <div class="d-flex align-items-center">
+                            <div class="circle-icon mr-2"></div>
+                            <div>
+                                <h3 class="mb-0 title">Квартира</h3>
+                                <p class="mt-0 description">Это Квартира</p>
+                            </div>
+                        </div>
+                    </button>
+                </div>
+
+                <div class="col-md-4 d-flex justify-content-center">
+                    <button class="btnbig buttonV1 mx-2" data-button-id="2">
+                        <div class="d-flex align-items-center">
+                            <div class="circle-icon mr-2"></div>
+                            <div>
+                                <h3 class="mb-0 title">Дом</h3>
+                                <p class="mt-0 description">Это Дом</p>
+                            </div>
+                        </div>
+                    </button>
+                </div>
+
+                <div class="col-md-4 d-flex justify-content-center">
+                    <button class="btnbig buttonV1 mx-2" data-button-id="3">
+                        <div class="d-flex align-items-center">
+                            <div class="circle-icon mr-2"></div>
+                            <div>
+                                <h3 class="mb-0 title">Другое</h3>
+                                <p class="mt-0 description">Тут Другое</p>
+                            </div>
+                        </div>
+                    </button>
+                </div>
+            </div>
+
+
+
+
+
+
+            <div class="row mt-4">
+                <div class="col-md-12 d-flex justify-content-center">
+                    <button class="btn buttonNext mx-2" id="2_3" onclick="changeStep(3)">
+                        Следуюший шаг
+                    </button>
+                </div>
+            </div>
+
+
+
+        </div>
+
+
+
+
+
+        <div id="screen3" class="screen">
+
+            <h1>Ваш бюджет</h1>
+
+            <!-- <h2 class="col-md-12 d-flex justify-content-center" style="font-size: 15px;">25% of our users looking
+                property in that range.</h2> -->
+
+            <div>
+                <div id="slider" class="slider"></div>
+
+
+                <div class="d-flex justify-content-center input-slider-container">
+                    <div class="input-group">
+
+                        <span class="label">Min</span>
+                        <span class="currency">USD</span>
+
+                        <div class="input-wrapper">
+                            <input type="number" id="var1_3">
+                        </div>
+                    </div>
+                    <div class="input-group">
+
+                        <span class="label">Max</span>
+                        <span class="currency">USD</span>
+
+                        <div class="input-wrapper">
+                            <input type="number" id="var2_3">
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <h2 style="font-size: 15px;">Change to USD</h2>
+                <div class="row mt-4">
+                    <div class="col-md-12 d-flex justify-content-center">
+                        <button class="btn buttonNext mx-2" id="showVariantsButton">
+                            Показать варианты
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <script>
+                const slider = document.getElementById('slider');
+                const minInput = document.getElementById('var1_3');
+                const maxInput = document.getElementById('var2_3');
+
+                noUiSlider.create(slider, {
+                    start: [50000, 5000000],
+                    step: 1, // Здесь используем шаг без запятой
+                    connect: true,
+                    range: {
+                        'min': 50000,
+                        'max': 5000000
+                    },
+                    pips: null
+                });
+
+                const handles = slider.querySelectorAll('.noUi-handle');
+                handles.forEach(handle => {
+                    handle.style.border = 'none';
+                    handle.style.top = '50%';
+                    handle.style.transform = 'translateY(-50%)';
+                    handle.style.width = '35px';
+                    handle.style.height = '35px';
+                    handle.style.borderRadius = '50%';
+                    handle.style.backgroundColor = 'white';
+                    handle.style.backgroundImage = 'none';
+                    handle.style.backgroundRepeat = 'none';
+                    handle.style.backgroundPosition = '0 0';
+                });
+
+                const markers = slider.querySelectorAll('.noUi-marker');
+                markers.forEach(marker => {
+                    marker.style.display = 'none';
+                });
+
+                const connectBar = slider.querySelector('.noUi-connect');
+                connectBar.style.display = 'none';
+                connectBar.style.height = '1px';
+                connectBar.style.backgroundColor = 'grey';
+
+                const tooltips = slider.querySelectorAll('.noUi-tooltip');
+                tooltips.forEach(tooltip => {
+                    tooltip.style.display = 'none';
+                });
+
+                slider.noUiSlider.on('update', function (values, handle) {
+                    if (handle === 0) {
+                        minInput.value = Math.round(values[0]); // Округляем значение до целого числа
+                    } else {
+                        maxInput.value = Math.round(values[1]); // Округляем значение до целого числа
+                    }
+                });
+
+                minInput.addEventListener('change', function () {
+                    slider.noUiSlider.set([this.value, null]);
+                });
+
+                maxInput.addEventListener('change', function () {
+                    slider.noUiSlider.set([null, this.value]);
+                });
+
+
+            </script>
+
+
+
+            <script>
+                const chatId = "{{ chatId }}"; // chatId будет подставлен из сервера вместо {{ chatId }}
+                document.getElementById('showVariantsButton').addEventListener('click', function () {
+                    fetch(`/showVariants?chatId=${chatId}`, {
+                        method: 'POST',
+                    })
+                        .then(response => response.json())
+                        .then(data => {
+                            if (data.success) {
+
+
+                                window.TelegramWebviewProxy.postEvent('web_app_close', {});
+
+                            } else {
+                                // Обработка ошибок
+                            }
+                        });
+                });
+
+            </script>
+
+
+        <script>
+            function requestFullscreen() {
+            window.TelegramWebviewProxy.postEvent('web_app_expand', {});
+            }
+
+            // window.onload = requestFullscreen;
+
+        </script>
+
+
+
+
+
+
+            <script>
+                let currentStep = 1;
+                let isAnimating = false;
+
+                function goBack() {
+                    if (!isAnimating && currentStep > 1) {
+                        changeStep(currentStep - 1);
+                    }
+                }
+
+                function changeStep(step) {
+                    if (!isAnimating) {
+                        isAnimating = true;
+                        const currentScreen = document.getElementById(`screen${currentStep}`);
+                        const newScreen = document.getElementById(`screen${step}`);
+                        currentScreen.style.opacity = 0;
+
+                        requestFullscreen();
+
+
+                        const fadeOutInterval = setInterval(function () {
+                            if (currentScreen.style.opacity <= 0) {
+                                currentScreen.style.display = 'none';
+                                newScreen.style.display = 'block';
+                                clearInterval(fadeOutInterval);
+
+                                currentStep = step;
+                                document.getElementById('step-info').textContent = `Шаг ${step} из 3`;
+
+                                if (step > 1) {
+                                    document.querySelector('.back-button').style.display = 'block';
+                                } else {
+                                    document.querySelector('.back-button').style.display = 'none';
+                                }
+
+                                isAnimating = false;
+                            } else {
+                                currentScreen.style.opacity -= 0.3;
+                            }
+                        }, 10);
+
+                        newScreen.style.opacity = 0;
+
+                        const fadeInInterval = setInterval(function () {
+                            if (newScreen.style.opacity >= 1) {
+                                clearInterval(fadeInInterval);
+                            } else {
+                                newScreen.style.opacity = parseFloat(newScreen.style.opacity) + 0.1;
+                            }
+                        }, 10);
+                    }
+                }
+
+
+
+
+                function openDescription(event) {
+                    const button = event.target;
+                    const description = button.querySelector('.description');
+                    const circleIcon = button.querySelector('.circle-icon');
+
+                    // Закрываем описания для других кнопок
+                    const allButtons = document.querySelectorAll('.btnbig');
+                    allButtons.forEach(otherButton => {
+                        if (otherButton !== button) {
+                            const otherDescription = otherButton.querySelector('.description');
+                            const otherCircleIcon = otherButton.querySelector('.circle-icon');
+
+                            otherDescription.style.display = "none";
+                            otherDescription.classList.remove("expanded");
+                            otherCircleIcon.classList.remove("expanded");
+                        }
+                    });
+
+                    if (description.style.display === "none" || description.style.display === "") {
+                        description.style.display = "block";
+                        description.classList.add("expanded");
+                        circleIcon.classList.add("expanded");
+                    } else {
+                        description.style.display = "none";
+                        description.classList.remove("expanded");
+                        circleIcon.classList.remove("expanded");
+                    }
+                }
+
+                // Добавляем обработчик клика для каждой из трех кнопок
+                const buttons = document.querySelectorAll('.btnbig');
+                buttons.forEach(button => {
+                    button.addEventListener('click', openDescription);
+                });
+
+            </script>
+
+
+
+
+
+
+
+
+            <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+            <script
+                src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/bootstrap-slider.min.js"></script>
+
+
+
+</body>
+
+</html>
